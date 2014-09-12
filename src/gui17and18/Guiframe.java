@@ -151,7 +151,12 @@ public class Guiframe extends JFrame{
 	private void changefram(int i)
 	{
 		this.removalof();
-		this.framesLayout(i);
+		framesLayout(i);
+		reFrsh();
+	}
+	
+	private void reFrsh()
+	{
 		revalidate();
 		repaint();
 	}
