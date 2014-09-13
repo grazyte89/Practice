@@ -33,10 +33,10 @@ public class Guiframe extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		this.border(300, 300);
-		this.initialIsingStuff();
-		//this.givevalueto();
-		this.menuLayout();
-		this.framesLayout(3);	
+		initialIsingStuff();
+		givevalueto();
+		menuLayout();
+		framesLayout(3); 	
 	}
 	
 	private void border(int w, int h)
@@ -105,7 +105,7 @@ public class Guiframe extends JFrame{
 	
 	private void framesLayout(int i)
 	{	
-		givevalueto();
+		//givevalueto();
 		setLayout(new GridLayout(1, 1));
 		switch (i)
 		{
@@ -197,6 +197,7 @@ public class Guiframe extends JFrame{
 			case "block":
 				changefram(3);
 				title("Blocklayout");
+				buttons[4].setText("1 place");
 				break;
 			case "grid":
 				changefram(1);
