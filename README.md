@@ -1,3 +1,5 @@
+Yo Lee, check the package gui17, it should contain two classes called guofrme and guidemo. Run them see how they are, because I made them for kumar and his students at uok and uob. 
+
 Practice
 ========
 
