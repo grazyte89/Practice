@@ -110,7 +110,7 @@ public class Guiframe extends JFrame{
 		switch (i)
 		{
 		case 1:
-			panel.setLayout(new GridLayout(6, 6));
+			panel.setLayout(new GridLayout(2, 4));
 			panel.add(labels[0]);
 			panel.add(buttons[0]);
 			panel.add(buttons[1]);
