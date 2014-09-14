@@ -36,7 +36,8 @@ public class Guiframe extends JFrame{
 		initialIsingStuff();
 		givevalueto();
 		menuLayout();
-		framesLayout(3); 	
+		framesLayout(3);
+		actionsss();
 	}
 	
 	private void border(int w, int h)
@@ -139,7 +140,7 @@ public class Guiframe extends JFrame{
 			break;
 		}
 		add(panel);
-		this.actionsss();
+		//this.actionsss();
 	}
 	
 	private void removalof()
