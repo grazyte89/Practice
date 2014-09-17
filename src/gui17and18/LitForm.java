@@ -3,10 +3,15 @@ package gui17and18;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class LitForm extends JFrame{
 	
@@ -15,6 +20,7 @@ public class LitForm extends JFrame{
 	private JTextArea outputBox;
 	private JButton[] buttons;
 	private JLabel[] theLabels;
+	private Scanner streamLine;
 	
 	public LitForm()
 	{
@@ -24,6 +30,7 @@ public class LitForm extends JFrame{
 		intiliasingVar();
 		giveValuetoVar();
 		layoutOfFrame();
+		buttonAction();
 	}
 	
 	private void intiliasingVar()
@@ -33,6 +40,7 @@ public class LitForm extends JFrame{
 		outputBox = new JTextArea(10, 70);
 		buttons = new JButton[5];
 		theLabels = new JLabel[5];
+		streamLine = null;
 	}
 	
 	private void giveValuetoVar()
@@ -40,6 +48,8 @@ public class LitForm extends JFrame{
 		buttons[0] = new JButton("ConnectToFile");
 		buttons[1] = new JButton("WriteToFile");
 		buttons[2] = new JButton("LoadFromFile");
+		
+		addresBox.setText("C:/Users/***/Downloads/stuff.txt");
 		
 		theLabels[0] = new JLabel("Addess/Path");
 		theLabels[1] = new JLabel("Input text");
@@ -89,8 +99,46 @@ public class LitForm extends JFrame{
 	    layout.putConstraint(SpringLayout.NORTH, buttons[2], 7, SpringLayout.SOUTH, outputBox);
 	}
 	
-	private void acction()
+	private void buttonAction()
 	{
-		
+		buttons[0].addActionListener(new ButtonAction());
+		buttons[2].addActionListener(new ButtonAction());
+	}
+	
+	private void connectTo()
+	{
+		try
+		{
+			streamLine = new Scanner(new FileInputStream(addresBox.getText()));
+		}
+		catch(FileNotFoundException e)
+		{
+			System.out.println(e.getMessage());
+			System.exit(0);
+		}
+	}
+	
+	private void loadOutput()
+	{
+		String i = streamLine.nextLine();
+		outputBox.setText(i);
+	}
+	
+	private class ButtonAction implements ActionListener
+	{
+
+		public void actionPerformed(ActionEvent e) {
+			
+			if(e.getActionCommand().equals("ConnectToFile"))
+			{
+				connectTo();
+				//System.out.println("successful");
+			}
+			if(e.getActionCommand().equals("LoadFromFile"))
+			{
+				loadOutput();
+			}
+			
+		}
 	}
 }
