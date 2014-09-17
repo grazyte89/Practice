@@ -6,8 +6,5 @@ public class Guidemo {
 		Guiframe ui = new Guiframe();
 		ui.setVisible(true);
 		 //ui.title("the workingg machine ");
-		//LitForm uif = new LitForm();
-		//uif.setVisible(true);
 	}
-
 }
