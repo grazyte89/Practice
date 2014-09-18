@@ -11,6 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class LitForm extends JFrame{
@@ -20,7 +22,8 @@ public class LitForm extends JFrame{
 	private JTextArea outputBox;
 	private JButton[] buttons;
 	private JLabel[] theLabels;
-	private Scanner streamLine;
+	private Scanner outPutBoxStreamLine;
+	private PrintWriter inPutStreamLine;
 	
 	public LitForm()
 	{
@@ -40,7 +43,8 @@ public class LitForm extends JFrame{
 		outputBox = new JTextArea(10, 70);
 		buttons = new JButton[5];
 		theLabels = new JLabel[5];
-		streamLine = null;
+		inPutStreamLine = null;
+		outPutBoxStreamLine = null;
 	}
 	
 	private void giveValuetoVar()
@@ -102,6 +106,7 @@ public class LitForm extends JFrame{
 	private void buttonAction()
 	{
 		buttons[0].addActionListener(new ButtonAction());
+		buttons[1].addActionListener(new ButtonAction());
 		buttons[2].addActionListener(new ButtonAction());
 	}
 	
@@ -109,7 +114,9 @@ public class LitForm extends JFrame{
 	{
 		try
 		{
-			streamLine = new Scanner(new FileInputStream(addresBox.getText()));
+			outPutBoxStreamLine = new Scanner(new FileInputStream(addresBox.getText()));
+			//inPutStreamLine = new PrintWriter(new FileOutputStream(addresBox.getText()));
+			inPutStreamLine = new PrintWriter(new FileOutputStream(addresBox.getText(), true));
 		}
 		catch(FileNotFoundException e)
 		{
@@ -118,10 +125,18 @@ public class LitForm extends JFrame{
 		}
 	}
 	
+	private void writeToPut()
+	{
+		String text = inputBox.getText();
+		inPutStreamLine.println(text);
+		inPutStreamLine.close();
+	}
+	
 	private void loadOutput()
 	{
-		String i = streamLine.nextLine();
+		String i = outPutBoxStreamLine.nextLine();
 		outputBox.setText(i);
+		outPutBoxStreamLine.close();
 	}
 	
 	private class ButtonAction implements ActionListener
@@ -133,6 +148,10 @@ public class LitForm extends JFrame{
 			{
 				connectTo();
 				//System.out.println("successful");
+			}
+			if(e.getActionCommand().equals("WriteToFile"))
+			{
+				writeToPut();
 			}
 			if(e.getActionCommand().equals("LoadFromFile"))
 			{
