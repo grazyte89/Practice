@@ -1,6 +1,7 @@
 package gui17and18;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
@@ -9,10 +10,15 @@ import javax.swing.SpringLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Reader;
 import java.util.Scanner;
 
 public class LitForm extends JFrame{
@@ -22,7 +28,7 @@ public class LitForm extends JFrame{
 	private JTextArea outputBox;
 	private JButton[] buttons;
 	private JLabel[] theLabels;
-	private Scanner outPutBoxStreamLine;
+	private BufferedReader outPutBoxStreamLine;
 	private PrintWriter inPutStreamLine;
 	
 	public LitForm()
@@ -52,8 +58,6 @@ public class LitForm extends JFrame{
 		buttons[0] = new JButton("ConnectToFile");
 		buttons[1] = new JButton("WriteToFile");
 		buttons[2] = new JButton("LoadFromFile");
-		
-		addresBox.setText("C:/Users/***/Downloads/stuff.txt");
 		
 		theLabels[0] = new JLabel("Addess/Path");
 		theLabels[1] = new JLabel("Input text");
@@ -112,11 +116,18 @@ public class LitForm extends JFrame{
 	
 	private void connectTo()
 	{
+		JFileChooser path = new JFileChooser();
+		path.showOpenDialog(null);
+		File filePath = path.getSelectedFile();
+		String pathLead = filePath.getAbsolutePath();
+		
 		try
 		{
-			outPutBoxStreamLine = new Scanner(new FileInputStream(addresBox.getText()));
+			//outPutBoxStreamLine = new Scanner(new FileInputStream(pathLead));
 			//inPutStreamLine = new PrintWriter(new FileOutputStream(addresBox.getText()));
-			inPutStreamLine = new PrintWriter(new FileOutputStream(addresBox.getText(), true));
+			outPutBoxStreamLine = new BufferedReader(new FileReader(filePath));
+			inPutStreamLine = new PrintWriter(new FileOutputStream(pathLead, true));
+			addresBox.setText(pathLead);
 		}
 		catch(FileNotFoundException e)
 		{
@@ -132,10 +143,11 @@ public class LitForm extends JFrame{
 		inPutStreamLine.close();
 	}
 	
-	private void loadOutput()
+	private void loadOutput() throws IOException
 	{
-		String i = outPutBoxStreamLine.nextLine();
-		outputBox.setText(i);
+		//String i = outPutBoxStreamLine.nextLine();
+		//outputBox.setText(i);
+		outputBox.read(outPutBoxStreamLine, null);
 		outPutBoxStreamLine.close();
 	}
 	
@@ -155,7 +167,14 @@ public class LitForm extends JFrame{
 			}
 			if(e.getActionCommand().equals("LoadFromFile"))
 			{
-				loadOutput();
+				try 
+				{
+					loadOutput();
+				} 
+				catch (IOException e1) 
+				{
+					e1.printStackTrace();
+				}
 			}
 			
 		}
