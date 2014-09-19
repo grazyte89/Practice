@@ -11,11 +11,13 @@ import javax.swing.SpringLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
@@ -29,7 +31,7 @@ public class LitForm extends JFrame{
 	private JButton[] buttons;
 	private JLabel[] theLabels;
 	private BufferedReader outPutBoxStreamLine;
-	private PrintWriter inPutStreamLine;
+	private BufferedWriter inPutStreamLine;
 	
 	public LitForm()
 	{
@@ -114,7 +116,7 @@ public class LitForm extends JFrame{
 		buttons[2].addActionListener(new ButtonAction());
 	}
 	
-	private void connectTo()
+	private void connectTo() throws IOException
 	{
 		JFileChooser path = new JFileChooser();
 		path.showOpenDialog(null);
@@ -125,8 +127,9 @@ public class LitForm extends JFrame{
 		{
 			//outPutBoxStreamLine = new Scanner(new FileInputStream(pathLead));
 			//inPutStreamLine = new PrintWriter(new FileOutputStream(addresBox.getText()));
+			//inPutStreamLine = new PrintWriter(new FileOutputStream(pathLead, true));
 			outPutBoxStreamLine = new BufferedReader(new FileReader(filePath));
-			inPutStreamLine = new PrintWriter(new FileOutputStream(pathLead, true));
+			inPutStreamLine = new BufferedWriter(new FileWriter(filePath, true));
 			addresBox.setText(pathLead);
 		}
 		catch(FileNotFoundException e)
@@ -136,10 +139,11 @@ public class LitForm extends JFrame{
 		}
 	}
 	
-	private void writeToPut()
+	private void writeToPut() throws IOException
 	{
-		String text = inputBox.getText();
-		inPutStreamLine.println(text);
+		//String text = inputBox.getText();
+		//inPutStreamLine.println(text);
+		inputBox.write(inPutStreamLine);
 		inPutStreamLine.close();
 	}
 	
@@ -158,12 +162,28 @@ public class LitForm extends JFrame{
 			
 			if(e.getActionCommand().equals("ConnectToFile"))
 			{
-				connectTo();
+				try 
+				{
+					connectTo();
+				} 
+				catch (IOException e1) 
+				{
+					e1.printStackTrace();
+					System.exit(0);
+				}
 				//System.out.println("successful");
 			}
 			if(e.getActionCommand().equals("WriteToFile"))
 			{
-				writeToPut();
+				try 
+				{
+					writeToPut();
+				} 
+				catch (IOException e1) 
+				{
+					e1.printStackTrace();
+					System.exit(0);
+				}
 			}
 			if(e.getActionCommand().equals("LoadFromFile"))
 			{
@@ -174,6 +194,7 @@ public class LitForm extends JFrame{
 				catch (IOException e1) 
 				{
 					e1.printStackTrace();
+					System.exit(0);
 				}
 			}
 			
