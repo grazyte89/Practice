@@ -13,15 +13,10 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Reader;
-import java.util.Scanner;
 
 public class LitForm extends JFrame{
 	
@@ -32,6 +27,8 @@ public class LitForm extends JFrame{
 	private JLabel[] theLabels;
 	private BufferedReader outPutBoxStreamLine;
 	private BufferedWriter inPutStreamLine;
+	//private Scanner outPutBoxStreamLine1;
+	//private PrintWriter inPutStreamLine1;
 	
 	public LitForm()
 	{
@@ -125,11 +122,11 @@ public class LitForm extends JFrame{
 		
 		try
 		{
-			//outPutBoxStreamLine = new Scanner(new FileInputStream(pathLead));
-			//inPutStreamLine = new PrintWriter(new FileOutputStream(addresBox.getText()));
+			//outPutBoxStreamLine1 = new Scanner(new FileInputStream(pathLead));
+			//inPutStreamLine1 = new PrintWriter(new FileOutputStream(addresBox.getText()));
 			//inPutStreamLine = new PrintWriter(new FileOutputStream(pathLead, true));
 			outPutBoxStreamLine = new BufferedReader(new FileReader(filePath));
-			inPutStreamLine = new BufferedWriter(new FileWriter(filePath, true));
+			inPutStreamLine = new BufferedWriter(new FileWriter(filePath));
 			addresBox.setText(pathLead);
 		}
 		catch(FileNotFoundException e)
@@ -168,7 +165,7 @@ public class LitForm extends JFrame{
 				} 
 				catch (IOException e1) 
 				{
-					e1.printStackTrace();
+					System.out.println(e1.getMessage());
 					System.exit(0);
 				}
 				//System.out.println("successful");
@@ -181,7 +178,7 @@ public class LitForm extends JFrame{
 				} 
 				catch (IOException e1) 
 				{
-					e1.printStackTrace();
+					System.out.println(e1.getMessage());
 					System.exit(0);
 				}
 			}
@@ -193,7 +190,7 @@ public class LitForm extends JFrame{
 				} 
 				catch (IOException e1) 
 				{
-					e1.printStackTrace();
+					System.out.println(e1.getMessage());
 					System.exit(0);
 				}
 			}
