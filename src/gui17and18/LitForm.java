@@ -38,6 +38,7 @@ public class LitForm extends JFrame{
 		intiliasingVar();
 		giveValuetoVar();
 		layoutOfFrame();
+		buttonVisableState(false, false);
 		buttonAction();
 	}
 	
@@ -61,6 +62,12 @@ public class LitForm extends JFrame{
 		theLabels[0] = new JLabel("Addess/Path");
 		theLabels[1] = new JLabel("Input text");
 		theLabels[2] = new JLabel("Output text"); 
+	}
+	
+	private void buttonVisableState(boolean b1, boolean b2)
+	{
+		buttons[1].setVisible(b1);
+		buttons[2].setVisible(b2);
 	}
 	
 	private void layoutOfFrame()
@@ -134,6 +141,8 @@ public class LitForm extends JFrame{
 			System.out.println(e.getMessage());
 			System.exit(0);
 		}
+		
+		buttonVisableState(true, false);
 	}
 	
 	private void writeToPut() throws IOException
@@ -142,6 +151,7 @@ public class LitForm extends JFrame{
 		//inPutStreamLine.println(text);
 		inputBox.write(inPutStreamLine);
 		inPutStreamLine.close();
+		buttonVisableState(false, true);
 	}
 	
 	private void loadOutput() throws IOException
@@ -150,6 +160,7 @@ public class LitForm extends JFrame{
 		//outputBox.setText(i);
 		outputBox.read(outPutBoxStreamLine, null);
 		outPutBoxStreamLine.close();
+		buttonVisableState(false, false);
 	}
 	
 	private class ButtonAction implements ActionListener
