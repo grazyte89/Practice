@@ -17,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 
 public class LitForm extends JFrame{
 	
@@ -38,7 +39,7 @@ public class LitForm extends JFrame{
 		intiliasingVar();
 		giveValuetoVar();
 		layoutOfFrame();
-		buttonVisableState(false, false);
+		buttonVisableState(false, false, true);
 		buttonAction();
 	}
 	
@@ -58,16 +59,18 @@ public class LitForm extends JFrame{
 		buttons[0] = new JButton("ConnectToFile");
 		buttons[1] = new JButton("WriteToFile");
 		buttons[2] = new JButton("LoadFromFile");
+		buttons[3] = new JButton("BruteForce");
 		
 		theLabels[0] = new JLabel("Addess/Path");
 		theLabels[1] = new JLabel("Input text");
 		theLabels[2] = new JLabel("Output text"); 
 	}
 	
-	private void buttonVisableState(boolean b1, boolean b2)
+	private void buttonVisableState(boolean b1, boolean b2, boolean b3)
 	{
 		buttons[1].setVisible(b1);
 		buttons[2].setVisible(b2);
+		buttons[3].setVisible(b3);
 	}
 	
 	private void layoutOfFrame()
@@ -84,6 +87,7 @@ public class LitForm extends JFrame{
 	    add(theLabels[2]);
 	    add(outputBox);
 	    add(buttons[2]);
+	    add(buttons[3]);
 	    
 	    layout.putConstraint(SpringLayout.WEST, theLabels[0], 5, SpringLayout.WEST, getContentPane());
 	    layout.putConstraint(SpringLayout.NORTH, theLabels[0], 5, SpringLayout.NORTH, getContentPane());
@@ -91,8 +95,11 @@ public class LitForm extends JFrame{
 	    layout.putConstraint(SpringLayout.NORTH, addresBox, 5, SpringLayout.NORTH, getContentPane());
 	    layout.putConstraint(SpringLayout.WEST, addresBox, 5, SpringLayout.EAST, theLabels[0]);
 	    
-	    layout.putConstraint(SpringLayout.WEST, buttons[0], 741, SpringLayout.WEST, getContentPane());
+	    layout.putConstraint(SpringLayout.EAST, buttons[0], -30, SpringLayout.EAST, getContentPane());
 	    layout.putConstraint(SpringLayout.NORTH, buttons[0], 7, SpringLayout.SOUTH, addresBox);
+	    
+	    layout.putConstraint(SpringLayout.WEST, buttons[3], 82, SpringLayout.WEST, getContentPane());
+	    layout.putConstraint(SpringLayout.NORTH, buttons[3], 7, SpringLayout.SOUTH, addresBox);
 	    
 	    layout.putConstraint(SpringLayout.WEST, theLabels[1], 5, SpringLayout.WEST, getContentPane());
 	    layout.putConstraint(SpringLayout.NORTH, theLabels[1], 7, SpringLayout.SOUTH, buttons[0]);
@@ -118,6 +125,7 @@ public class LitForm extends JFrame{
 		buttons[0].addActionListener(new ButtonAction());
 		buttons[1].addActionListener(new ButtonAction());
 		buttons[2].addActionListener(new ButtonAction());
+		buttons[3].addActionListener(new ButtonAction());
 	}
 	
 	private void connectTo() throws IOException
@@ -142,7 +150,7 @@ public class LitForm extends JFrame{
 			System.exit(0);
 		}
 		
-		buttonVisableState(true, false);
+		buttonVisableState(true, false, true);
 	}
 	
 	private void writeToPut() throws IOException
@@ -151,7 +159,7 @@ public class LitForm extends JFrame{
 		//inPutStreamLine.println(text);
 		inputBox.write(inPutStreamLine);
 		inPutStreamLine.close();
-		buttonVisableState(false, true);
+		buttonVisableState(false, true,true);
 	}
 	
 	private void loadOutput() throws IOException
@@ -160,7 +168,21 @@ public class LitForm extends JFrame{
 		//outputBox.setText(i);
 		outputBox.read(outPutBoxStreamLine, null);
 		outPutBoxStreamLine.close();
-		buttonVisableState(false, false);
+		buttonVisableState(false, false, true);
+	}
+	
+	private void bruteForceMecha()
+	{
+		Random number = new Random();
+		int numberONe = number.nextInt(10);
+		int numberTwo = 0;
+		
+		while(numberTwo != numberONe)
+		{
+			//Integer.toString(numberTwo)
+			inputBox.setText("hello kjkvj");
+			numberTwo++;
+		}
 	}
 	
 	private class ButtonAction implements ActionListener
@@ -204,6 +226,10 @@ public class LitForm extends JFrame{
 					System.out.println(e1.getMessage());
 					System.exit(0);
 				}
+			}
+			if(e.getActionCommand().equals("BrBruteForce"))
+			{
+				bruteForceMecha();
 			}
 			
 		}
