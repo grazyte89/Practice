@@ -55,7 +55,8 @@ public class MovingBall extends JFrame{
 	private class Runner extends Thread {
 		
 		private Random numberGen = new Random();
-		Graphics ball12 = panel1.getGraphics();
+		//Graphics ball12 = panel1.getGraphics();
+		Graphics ball12 = getGraphics();
 		
 		public void run() {
 			while (true) 
@@ -63,22 +64,22 @@ public class MovingBall extends JFrame{
 				int location1 = numberGen.nextInt(700);
 				int location2 = numberGen.nextInt(700);
 				
-				if((location1 > 100 && location1 < 250) && (location2 > 100 && location2 < 250))
+				if((location1 > 50 && location1 < 450) && (location2 > 50 && location2 < 450))
 				{
-					ball12.fillOval(location1, location2, 50, 50);
-					repaint();
+					ball12.fillOval(location1, location2, 10, 10);
+					//repaint();
 				}
-				/*else
+				else
 				{
 					try
 					{
-						Thread.sleep(5);
+						Thread.sleep(500);
 					}
 					catch(InterruptedException e)
 					{
 						System.exit(0);
 					}
-				}*/
+				}
 			}
 
 		}
