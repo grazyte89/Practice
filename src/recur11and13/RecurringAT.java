@@ -22,20 +22,20 @@ public class RecurringAT implements PowerInterface {
 		}
 	}
 
-	public int powerf(int q, int m) 
+	public int powerf(int number, int powerValue) 
 	{
 		/*
 		 * This how we define a recursive return method
 		 */
-		if(m < 0)
+		if(powerValue < 0)
 		{
 			System.out.println("error");
 			System.exit(0);
 		}
 		
-		if(m > 0)
+		if(powerValue > 0)
 		{
-			return (powerf(q, m -1) * q);
+			return (powerf(number, powerValue -1) * number);
 		}
 		else
 		{
