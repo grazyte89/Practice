@@ -2,13 +2,13 @@ package gui17and18;
 
 import java.awt.BorderLayout;
 import java.awt.Graphics;
-import java.awt.GridLayout;
+//import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.JButton;
-import javax.swing.JEditorPane;
+//import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
