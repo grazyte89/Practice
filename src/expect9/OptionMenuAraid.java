@@ -28,7 +28,7 @@ public class OptionMenuAraid {
 				{
 					mSend("The value is either to large or to small");
 				}
-				else if(tnumber > 0 && tnumber < 3)
+				else if(tnumber > 0 && tnumber <= 3)
 				{
 					opmenu(tnumber);
 					optionstate = true;

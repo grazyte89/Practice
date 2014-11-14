@@ -4,7 +4,8 @@ public class OptionMenuDemo {
 
 	public static void main(String[] args) {
 		
-		OptionMenuAraid i = new OptionMenuAraid();
+		@SuppressWarnings("unused")
+		OptionMenuAraid menuAraid = new OptionMenuAraid();
 
 	}
 }

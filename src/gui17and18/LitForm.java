@@ -21,6 +21,11 @@ import java.util.Random;
 
 public class LitForm extends JFrame{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8319492991973922122L;
+	
 	private JTextField addresBox;
 	private JTextArea inputBox;
 	private JTextArea outputBox;

@@ -17,6 +17,11 @@ import javax.swing.JPanel;
 
 public class MovingBall extends JFrame{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 972018088658006593L;
+
 	private int speedOfBall = 500;
 	
 	private JButton button1;

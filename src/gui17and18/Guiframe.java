@@ -16,6 +16,11 @@ import javax.swing.JPanel;
 
 public class Guiframe extends JFrame{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8368246534169396219L;
+	
 	private JButton[] buttons;
 	private JLabel[] labels;
 	private JPanel panel;
