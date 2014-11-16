@@ -57,7 +57,7 @@ public class BasicUserNamerChecker {
 			{
 				if(string.equalsIgnoreCase(getUserName())) 
 				{
-					System.out.println(userName + " has been take Please choose another");
+					System.out.println(userName + " has been taken. Please choose another");
 				}
 			}
 		}
