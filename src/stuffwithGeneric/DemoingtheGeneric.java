@@ -27,11 +27,15 @@ public class DemoingtheGeneric {
 			System.out.println(client2 + " is the same as " + client3);
 		}
 		
-		/*else if(client2.equals(client3))
+		if(client2.equals(client3))
 		{
-			System.out.println(client2 + " is the same as " + client3);
-		}*/
+			System.out.println("It works here");
+		}
 		
+		if(MethodofGeneric.isEquals(client2, client3))
+		{
+			System.out.println("They're the same");
+		}	
 		else
 		{
 			System.out.println("The type of data help by the object" + client1 + " " + client2 + " " //
