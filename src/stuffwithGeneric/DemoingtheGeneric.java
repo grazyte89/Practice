@@ -7,6 +7,8 @@ public class DemoingtheGeneric {
 		
 		PlaywithGeneric<String> client1 = new PlaywithGeneric<String>();
 		PlaywithGeneric<String> client2 = new PlaywithGeneric<String>();
+		PlaywithGeneric<String> client3 = new PlaywithGeneric<String>();
+		PlaywithGeneric<Integer> client4 = new PlaywithGeneric<Integer>();
 		
 		client1.setFirstName("Lancel");
 		client1.setLastName("Mahogany");
@@ -14,13 +16,26 @@ public class DemoingtheGeneric {
 		client2.setFirstName("Jon");
 		client2.setLastName("snow");
 		
-		if(client1.equals(client2)) 
+		client3.setFirstName("Jon");
+		client3.setLastName("snow");
+		
+		client4.setFirstName(45);
+		client4.setLastName(75);
+		
+		if(MethodofGeneric.compareTheObjects(client2, client3)) 
 		{
-			System.out.println(client1 + " is the same as " + client2);
+			System.out.println(client2 + " is the same as " + client3);
 		}
+		
+		/*else if(client2.equals(client3))
+		{
+			System.out.println(client2 + " is the same as " + client3);
+		}*/
+		
 		else
 		{
-			System.out.println(client1 + " is NOT the same as " + client2);
+			System.out.println("The type of data help by the object" + client1 + " " + client2 + " " //
+					+ client4);
 		}
 		
 	}
