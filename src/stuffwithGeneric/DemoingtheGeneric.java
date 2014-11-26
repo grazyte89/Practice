@@ -32,9 +32,9 @@ public class DemoingtheGeneric {
 			System.out.println("It works here");
 		}
 		
-		if(MethodofGeneric.isEquals(client2, client3))
+		if(MethodofGeneric.<String>compareTheObjects(client2, client3))
 		{
-			System.out.println("They're the same");
+			System.out.println("another way of using the generic method");
 		}	
 		else
 		{
