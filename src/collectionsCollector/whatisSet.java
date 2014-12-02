@@ -1,9 +1,11 @@
 package collectionsCollector;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class WhatisSet {
 	
@@ -32,19 +34,27 @@ public class WhatisSet {
 		switch (key.toLowerCase()) 
 		{
 		case "hashset":
-			System.out.println("I think it worked");
-			//Set<Integer> hashset = new HashSet<Integer>();
-			//addValuesInto(hashset);
-			//displayContent(hashset);
+			System.out.println("You're here at the hashset");
 			Set<String> hashset = new HashSet<String>();
 			addStringValuesInto(hashset);
 			displayStringContent(hashset);
 			break;
 		case "treeset":
+			System.out.println("You're here at the treeset");
+			Set<Integer> treeset = new TreeSet<Integer>();
+			addIntegerValuesInto(treeset);
+			displayContent(treeset);
 			break;
 		case "linkedhashset":
+			System.out.println("You're here at the linkedhashset");
+			Set<Integer> linkedHashset = new LinkedHashSet<Integer>();
+			addIntegerValuesInto(linkedHashset);
+			displayContent(linkedHashset);
 			break;
 		case "all":
+			this.menuWithSelectionOfSet("hashset");
+			this.menuWithSelectionOfSet("treeset");
+			this.menuWithSelectionOfSet("linkedhashset");
 			break;
 		default:
 			System.exit(0);
@@ -60,12 +70,14 @@ public class WhatisSet {
 		}
 	}
 	
-	@SuppressWarnings("unused")
 	private void addIntegerValuesInto(Set<Integer> theSetCollection) 
 	{
 		for(int cyvleValue = 0; cyvleValue < 300; cyvleValue++)
 		{
+			int value = generateNumberValues(30);
 			theSetCollection.add(generateNumberValues(30));
+			theSetCollection.add(value);
+			theSetCollection.add(value);
 		}	
 	}
 	
@@ -83,7 +95,6 @@ public class WhatisSet {
 		}
 	}
 	
-	@SuppressWarnings("unused")
 	private void displayContent(Set<Integer> set)
 	{
 		for(Integer setValuein : set)

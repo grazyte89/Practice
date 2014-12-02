@@ -6,5 +6,8 @@ public class DemoingTheCollection {
 		WhatisSet whatisSet = new WhatisSet();
 		whatisSet.activate();
 		System.out.println(WhatisSet.checkReturn("hello".toCharArray()));
+		
+		//WhatisList whatisList = new WhatisList();
+		//whatisList.executionlPoint();
 	}
 }
