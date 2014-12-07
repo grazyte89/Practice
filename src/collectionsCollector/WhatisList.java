@@ -1,39 +1,76 @@
 package collectionsCollector;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class WhatisList {
 	
-	public WhatisList()
-	{
-		//
-	}
+	private String listTypeState;
+	private List<String> list;
+	private Scanner scanner = new Scanner(System.in);
 	
 	public void executionlPoint()
 	{
-		List<String> list = new ArrayList<String>();
-		this.doThingsTwice(list);
-		this.showEverything(list);
+		stateChoosing();
+		menuOfChoosingListType();
 	}
 	
-	private void doThingsTwice(List<String> list)
+	private String stateChoosing()
 	{
-		for(int i = 0; i < 10; i++)
+		
+		System.out.println("Enter the type of list");
+		this.listTypeState = scanner.next();
+		return listTypeState;
+	}
+	
+	public String getListTypeState() 
+	{
+		return listTypeState;
+	}
+
+	public void setListTypeState(String listTypeState) 
+	{
+		this.listTypeState = listTypeState;
+	}
+	
+	private void menuOfChoosingListType()
+	{
+		switch (listTypeState.toLowerCase()) {
+		case "arraylist":
+			list = new ArrayList<String>();
+			break;
+		case "linked":
+			list = new LinkedList<String>();
+			break;
+		default:
+			System.out.println("Error");
+			break;
+		}
+	}
+	
+	public void addDataToTheList(String data)
+	{
+		this.list.add(data);
+	}
+	
+	public void generateDataTwice(List<String> list, int numberOfData)
+	{
+		for(int i = 0; i < numberOfData; i++)
 		{
 			String string = String.valueOf(GibberishWordGenerator.randomWordGenerator());
-			list.add(string);
+			addDataToTheList(string);
 			list.add(string);
 		}
 	}
 	
-	private void showEverything(List<String> list)
+	public void showEverything(List<String> list)
 	{
 		for(String stringIn : list)
 		{
 			System.out.println(stringIn);
 		}
 	}
-
 }

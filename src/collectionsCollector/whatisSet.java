@@ -10,12 +10,7 @@ import java.util.TreeSet;
 public class WhatisSet {
 	
 	private Scanner scanner = new Scanner(System.in);
-	
-	public WhatisSet()
-	{
-		//
-	}
-	
+
 	public void activate()
 	{
 		menuWithSelectionOfSet(entryOfTypeOfValue());
