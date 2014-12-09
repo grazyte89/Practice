@@ -3,9 +3,9 @@ package collectionsCollector;
 public class DemoingTheCollection {
 
 	public static void main(String[] args) {
-		WhatisSet whatisSet = new WhatisSet();
+		WhattisSet whatisSet = new WhattisSet();
 		whatisSet.activate();
-		System.out.println(WhatisSet.checkReturn("hello".toCharArray()));
+		System.out.println(WhattisSet.checkReturn("hello".toCharArray()));
 		
 		WhatisList whatisList = new WhatisList();
 		whatisList.executionlPoint();

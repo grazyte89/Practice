@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class WhatisSet {
+public class WhattisSet {
 	
 	private Scanner scanner = new Scanner(System.in);
 
@@ -114,4 +114,5 @@ public class WhatisSet {
 		}
 		return temp;
 	}
+
 }
