@@ -9,5 +9,8 @@ public class DemoingTheCollection {
 		
 		WhatisList whatisList = new WhatisList();
 		whatisList.executionlPoint();
+		
+		WhatsisMap map = new WhatsisMap();
+		map.firstBase();
 	}
 }

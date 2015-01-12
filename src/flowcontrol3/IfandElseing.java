@@ -11,6 +11,11 @@ public class IfandElseing {
 	public static void main(String[] args) {
 		
 		inputin = new Scanner(System.in);
+		
+		String stingValue = inputin.next();
+		TernaryStuff stuff = new TernaryStuff();
+		stuff.checkTenerary(stingValue);
+		
 		int tax;
 		double total = 0;
 		
