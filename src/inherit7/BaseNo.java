@@ -5,7 +5,8 @@ import java.util.List;
 
 public class BaseNo {
 	
-	private int number;
+	
+	private int number = 10;
 	List<String> strings = new ArrayList<String>();
 	
 	public BaseNo()
@@ -14,6 +15,7 @@ public class BaseNo {
 		doingSomething();
 		// the doingSomething method, when executed, will execute the latest definition from its 
 		// child class.
+		System.out.println("nothing left");
 	}
 	
 	public BaseNo(int number) 
@@ -43,6 +45,9 @@ public class BaseNo {
 	
 	public void doingSomething()
 	{
-		System.out.println("base class jv;k;v");
+		for(int i = 0; i < 5; i++)
+		{
+			addToListData("Data value " + i + " being executed in base class, hellololololololol");
+		}
 	}
 }

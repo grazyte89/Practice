@@ -4,12 +4,13 @@ import java.util.List;
 
 public class SecondBase extends BaseNo{
 
-	private String name;
+	public String name;
 	
 	public SecondBase()
 	{
 		super();
 		System.out.println("secondclass");
+		setNumber(50);
 		//doingSomething();
 	}
 

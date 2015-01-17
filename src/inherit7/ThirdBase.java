@@ -5,7 +5,8 @@ public class ThirdBase extends SecondBase{
 	public ThirdBase()
 	{
 		super();
-		System.out.println("tird");
+		System.out.println("third");
+		System.out.println(getNumber());
 	}
 	
 	public void addData(String string)
@@ -24,7 +25,10 @@ public class ThirdBase extends SecondBase{
 	@Override
 	public void doingSomething() 
 	{
-		System.out.println("third class version executed");
+		for(int i = 0; i < 5; i++)
+		{
+			addToListData("Data value " + i + 5 * 6 + " being executed in third base");
+		}
 	}
 	
 	
