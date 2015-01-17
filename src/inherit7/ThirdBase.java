@@ -20,4 +20,12 @@ public class ThirdBase extends SecondBase{
 			System.out.println(string);
 		}
 	}
+
+	@Override
+	public void doingSomething() 
+	{
+		System.out.println("third class version executed");
+	}
+	
+	
 }

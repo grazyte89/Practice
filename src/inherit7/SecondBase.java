@@ -10,7 +10,7 @@ public class SecondBase extends BaseNo{
 	{
 		super();
 		System.out.println("secondclass");
-		doingSomething();
+		//doingSomething();
 	}
 
 	public String getName()
@@ -23,16 +23,16 @@ public class SecondBase extends BaseNo{
 		this.name = name;
 	}
 	
-	private void doingSomething()
-	{
-		for(int i = 0; i < 5; i++)
-		{
-			addToListData("Data value " + i);
-		}
-	}
-	
 	public List<String> getData()
 	{
 		return getDataFromList();
+	}
+	
+	public void doingSomething()
+	{
+		for(int i = 0; i < 5; i++)
+		{
+			addToListData("Data value " + i + " being executed in Second base");
+		}
 	}
 }

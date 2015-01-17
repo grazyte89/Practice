@@ -11,6 +11,9 @@ public class BaseNo {
 	public BaseNo()
 	{
 		System.out.println("what's up, base class");
+		doingSomething();
+		// the doingSomething method, when executed, will execute the latest definition from its 
+		// child class.
 	}
 	
 	public BaseNo(int number) 
@@ -32,9 +35,14 @@ public class BaseNo {
 	{
 		strings.add(string);
 	}
-
+	
 	public List<String> getDataFromList()
 	{
 		return strings;
+	}
+	
+	public void doingSomething()
+	{
+		System.out.println("base class jv;k;v");
 	}
 }

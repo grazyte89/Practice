@@ -76,6 +76,6 @@ public class CntBreakRtn {
 		brk.wayToBreak();
 		
 		CntBreakRtn rtn = new CntBreakRtn();
-		rtn.wayToReturn(false);
+		rtn.wayToReturn(true);
 	}
 }
