@@ -6,6 +6,5 @@ public class OptionMenuDemo {
 		
 		@SuppressWarnings("unused")
 		OptionMenuAraid menuAraid = new OptionMenuAraid();
-
 	}
 }

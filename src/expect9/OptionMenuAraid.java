@@ -54,6 +54,11 @@ public class OptionMenuAraid {
 			catch(Exception e)
 			{
 				System.out.println(e.getMessage());
+				System.out.println("i've caught the exception thrown, using the the throw");
+			}
+			finally
+			{
+				System.out.println("finally will always get executed after a try or a catch");
 			}
 		}
 	}
