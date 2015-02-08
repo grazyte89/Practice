@@ -26,7 +26,7 @@ public class Anidemo {
 		oj.movement();
 		/*
 		 * movement in base class animal and cat class have different definition. 
-		 * so why is the out of the cat version movement used?
+		 * so why is the method of the cat version movement used?
 		 * 
 		 * because we are using late binding, meaning java leaves the movement method to be
 		 * executed during run time, as it knows there are more than one definition in the 
