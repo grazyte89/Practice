@@ -213,6 +213,11 @@ public class Datesmater {
                 month.equals("September") || month.equals("October") ||
                 month.equals("November") || month.equals("December") );
     }
+    
+    public Datesmater getValueOfClass()
+    {
+    	return this; // return the whole class itself
+    }
 
     private String monthString(int monthNumber)
     {

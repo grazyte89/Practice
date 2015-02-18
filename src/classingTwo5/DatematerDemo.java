@@ -10,6 +10,7 @@ public class DatematerDemo {
 		Datesmater date2 = new Datesmater(date1);
 		System.out.println(date2);
 		
+		System.out.println(date2.getValueOfClass() + " " + date1.getValueOfClass());
 	}
 
 }
