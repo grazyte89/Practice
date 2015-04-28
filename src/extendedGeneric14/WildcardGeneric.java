@@ -24,7 +24,7 @@ public class WildcardGeneric {
 		System.out.println(list );
 	}
 	
-	public void lowerBoundWildcard(List<? super SecondBase> list)
+	public static void lowerBoundWildcard(List<? super SecondBase> list)
 	{
 		System.out.println(list);
 	}
