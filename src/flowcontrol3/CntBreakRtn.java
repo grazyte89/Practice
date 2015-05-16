@@ -65,6 +65,7 @@ public class CntBreakRtn {
 			
 			System.out.println("...means continue hasn't been executed");
 		}
+		System.out.println("... outs");
 	}
 	
 	public static void main(String[] args) {
