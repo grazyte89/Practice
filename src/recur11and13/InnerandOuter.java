@@ -2,14 +2,16 @@ package recur11and13;
 
 public class InnerandOuter {
 	
-	private int mones = 10;
+	private int mones = 10; // the private variable of the outer class can be directly accessed by the inner class
 	
 	public class Inclass {
 		
 		private int test = 45;
 		
 		private int dollar;
-		private int cent;
+		private int cent; // the variable in the inner class cannot be directly by the outer class, but instead 
+		// via object e.g. innerclassObject.innerClassVariable: inClass.cent
+		// inClass would be impossible in a normal class, if the variable was private
 		
 		private Inclass(String amount)
 		{
