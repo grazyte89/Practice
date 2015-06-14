@@ -11,6 +11,9 @@ public class Indemo {
 		System.out.println(" ");
 		account.makedeposit("100.00");
 		System.out.println(account.getbalance());
-
+		
+		// make an object of inner class
+		
+		/* InnerandOuter.Inclass inClass = new InnerandOuterclass().new Inclass();  */
 	}
 }
