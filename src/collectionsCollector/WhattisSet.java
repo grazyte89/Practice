@@ -9,6 +9,12 @@ import java.util.TreeSet;
 
 public class WhattisSet {
 	
+	/* A set is data structure that allows us to store collection of data(item) like the list data structure, 
+	   but unlike the list data structure, the set set data structure does not store duplicated data */
+	
+	/* So if the set data structure contains an item called "Hello", the it would impossible to to store another 
+	   item called "Hello" */
+	
 	private Scanner scanner = new Scanner(System.in);
 
 	public void activate()

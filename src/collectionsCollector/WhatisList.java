@@ -8,6 +8,9 @@ import java.util.Scanner;
 
 public class WhatisList {
 	
+	/* a list is data structure similar to an array, in that it holds an collection data(items), but unlike 
+	   the array which is fixed, list are dynamic and the size of the list can change */
+	
 	private String listTypeState;
 	private List<String> list;
 	private Scanner scanner = new Scanner(System.in);
