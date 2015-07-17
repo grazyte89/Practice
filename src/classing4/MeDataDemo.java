@@ -16,6 +16,7 @@ public class MeDataDemo {
 		data2.setmonth("December");
 		
 		System.out.println(data1.equals(data2));
+		System.out.println(data1);
 		
 	}
 }
