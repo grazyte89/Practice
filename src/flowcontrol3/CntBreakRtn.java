@@ -68,6 +68,23 @@ public class CntBreakRtn {
 		System.out.println("... outs");
 	}
 	
+	public void multiArrayContinue()
+	{
+		for(int a = 0; a < 10; a++)
+		{
+			for(int b = a - a; b < 10; b++)
+			{
+				if(b == a)
+				{
+					System.out.println("inner loop inner section, continue activate" + b);
+					continue;
+				}
+				System.out.println("inner loop outer section" + b);
+			}
+			System.out.println(a);
+		}
+	}
+	
 	public static void main(String[] args) {
 		CntBreakRtn cnt = new CntBreakRtn();
 		cnt.wayToContinue();

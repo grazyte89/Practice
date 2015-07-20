@@ -158,7 +158,7 @@ public class LitForm extends JFrame{
 		buttonVisableState(true, false, true);
 	}
 	
-	private void writeToPut() throws IOException
+	private void writeToInput() throws IOException
 	{
 		//String text = inputBox.getText();
 		//inPutStreamLine.println(text);
@@ -212,7 +212,7 @@ public class LitForm extends JFrame{
 			{
 				try 
 				{
-					writeToPut();
+					writeToInput();
 				} 
 				catch (IOException e1) 
 				{
