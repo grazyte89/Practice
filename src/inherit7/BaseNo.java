@@ -11,10 +11,11 @@ public class BaseNo {
 	
 	public BaseNo()
 	{
-		System.out.println("what's up, base class");
+		System.out.println("what's up base class");
 		doingSomething();
-		// the doingSomething method, when executed, will execute the latest definition from its 
-		// child class.
+		/* the doingSomething method, when executed will execute the latest definition from its child class. 
+		   This is done when the super() constructor is called in the child class. When it finds a method that 
+		   Overridden, then it will use the latest definition */
 		System.out.println("nothing left");
 	}
 	
@@ -45,6 +46,7 @@ public class BaseNo {
 	
 	public void doingSomething()
 	{
+		// this method is difference in every class, we will see which methods will be used by java.
 		for(int i = 0; i < 5; i++)
 		{
 			addToListData("Data value " + i + " being executed in base class, hellololololololol");
