@@ -6,7 +6,7 @@ import java.util.List;
 
 public class WildcardGeneric {
 	
-	private List<Integer> data;
+	//private List<Integer> data;
 	
 	public WildcardGeneric()
 	{
