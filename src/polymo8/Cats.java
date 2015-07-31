@@ -1,10 +1,11 @@
 package polymo8;
 
 public class Cats extends Animal{
-	/*
-	 * We have made the cat class a subclass of the Animal class: our base class, by using the
-	 * 'extend' keyword (inheritance). 
-	 */
+	
+	/* We have made the cat class a subclass of the Animal class: our base class, by using the 'extend' keyword 
+	   (inheritance). */
+	
+	/* */ 
 	
 	private String breed;
 	private int speed;

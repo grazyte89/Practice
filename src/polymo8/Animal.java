@@ -1,9 +1,16 @@
 package polymo8;
 
 public abstract class Animal {
-	/*
-	 * our base class to demonstrate ploymorphism 
-	 */
+	
+	/* our base class to demonstrate polymorphism */
+	
+	/* This is also an abstract class. An abstract class is class with an abstract method, meaning we added a method
+	   that is undefined with just a method header. */
+	
+	/* An abstract method is an undefined method which acts as placeholder, which tell the java that we have an 
+	   undefined method which we hope will be overridden(define) in one of the child class.
+	   at the bottom of this page is an abstract method */
+	
 	private String name;
 	private String food;
 	
@@ -54,6 +61,6 @@ public abstract class Animal {
 		return (this.name + " " + this.food);
 	}
 	
-	public abstract int getspeed();
+	public abstract int getspeed(); // abstract method
 	public abstract void setspeed();
 }

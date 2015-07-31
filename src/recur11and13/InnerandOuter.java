@@ -11,7 +11,7 @@ public class InnerandOuter {
 		private int dollar;
 		private int cent; // the variable in the inner class cannot be directly by the outer class, but instead 
 		// via object e.g. innerclassObject.innerClassVariable: inClass.cent
-		// inClass would be impossible in a normal class, if the variable was private
+		/* accessing the private variable of inClass would be impossible if it was a normal class */
 		
 		private Inclass(String amount)
 		{
