@@ -16,6 +16,9 @@ public class BaseNo {
 		/* the doingSomething method, when executed will execute the latest definition from its child class. 
 		   This is done when the super() constructor is called in the child class. When it finds a method that 
 		   Overridden, then it will use the latest definition */
+		
+		/* This action of executing the doingSomething can looked as dynamic/runtime polymorphism, because java compiler
+		   will no execute the one in it class, but the latest definition of that method */ 
 		System.out.println("nothing left");
 	}
 	
