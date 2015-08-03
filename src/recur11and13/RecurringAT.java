@@ -2,7 +2,8 @@ package recur11and13;
 
 public class RecurringAT implements PowerInterface {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
 		RecurringAT oj = new RecurringAT();
 		oj.writevertical(1557);
@@ -18,7 +19,7 @@ public class RecurringAT implements PowerInterface {
 		else
 		{
 			writevertical(n / 10);
-			System.out.println(n % 10);
+			System.out.println(n % 10 + "java");
 		}
 	}
 

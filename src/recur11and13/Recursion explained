@@ -1,0 +1,29 @@
+ Recursion
+ 
+ /* ----------------------------------------- | what is recursion | ----------------------------------------------- */
+ 
+ Recursion is when you have a method, which contains the same method within its definition.
+ 
+ e.g.
+ 
+ public void writeVertical(int n)
+ {
+ 	if()
+ 	{
+ 		system.out.println(n);
+ 	}
+ 	else
+ 	{
+ 		writeVeritcal(n / 10);
+ 		// Recursion happens here. Here we invoking the same method with the same method
+ 		System.out.println(n % 10);
+ 	}
+ }
+ 
+ ::Note::
+ 
+ In a nut-shell, a recursion is a method calling upon itself within its boundaries.
+ 
+ 
+ 
+ 

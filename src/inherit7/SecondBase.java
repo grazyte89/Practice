@@ -11,6 +11,7 @@ public class SecondBase extends BaseNo{
 		super();
 		System.out.println("secondclass");
 		setNumber(50);
+		strings.add("second");
 		//doingSomething();
 	}
 

@@ -1,0 +1,87 @@
+ Polymorphism
+ 
+ /* ------------------------------------- | What is polymorphism? | ------------------------------------------- */
+ 
+ Polymorphism in short is when a method of the base class is modified and used in a different scenario, but still
+ containing the same functionality. In polymorphism there are two concepts: static (compiler) polymorphism 
+ and dynamic (dynamic) polymorphism; these explained at the bottom.
+ 
+ /* ----------------------------------- | Polymorphism in a nutshell | --------------------------------------- */
+ 
+ Polymorphism allows us to reuse code and redefine code from the base class.
+ 
+ Polymorphism is basically using some methods from base class, and overriding them in the derived class to produce
+ a different outcome, but retaining the original purpose.  
+ 
+ e.g.
+ 
+ "equals()" method can be considered an example of a polymorphism, because we change the definition (override) in 
+ our derived class that is subclass ( a descendant) of the base class which is the lang.Object class.
+ 
+ Polymorphism allows us to stuff like this e.g.
+ 
+ Animal animal = new Cat() // another speciality of OOP.
+ 
+ /* -------------------------------- | What is dynamic/runtime polymorphism | ------------------------------- */
+ 
+ Dynamic/runtime polymorphism is when the compiler doesn't know which method to use, so it just ignores it,
+ to be used when the program is being executed.
+ 
+ e.g.
+ 
+ public class BaseClass { 
+ 	public void outPrint()
+ 	{
+ 		system.out.print("base class");
+ 	}
+ }
+ 
+ public class SecondClass extends BaseClass{
+ 	public void outPrint()
+ 	{
+ 		system.out.orintln("second class");
+ 	}
+ }
+ 
+ public static void main(String[] args)
+ {
+ 	BaseClass base-class = new BaseClass();
+ 	SecondClass second-class = new BaseClass()
+ 	
+ 	base-class.outprint(); // this will run during the compiler stage, because it know base-class has one method.
+ 	
+ 	
+ 	second-clss.outPrint(); 
+ 	// this will run during runtime , because SecondClass is a subclass of BaseClass, and so there's two version of 
+ 	   the outPrint() method, it wouldn't know which one to use. Why is the SecondClass version used during, because 
+ 	   the data type is SecondBase, so thats taken into account. 
+ 	   
+    // runtime polymorphism. also check out Anidemo.java and check method display.  
+    
+    // BTW, dynamic polymorphism tends to happen when there's inheritance and the methods of the baseClass and derived
+    class clash, because they both share the same methods.
+ }
+ 
+ 
+ /* -------------------------------- | What is static/compiler polymorphism | -------------------------------- */
+ 
+ static/compiler polymorphism is when there is class with multiple methods with the same name, each with a different
+ parameters, as well as different number of parameters in the same class. The compiler will able run these because it
+ will able differentiate them by their parameters.
+ 
+ public class BaseClass {
+ 	public void display(int number)
+ 	{
+ 	}
+ 	
+ 	public void display(string word)
+ 	{
+ 	}
+ 	
+ 	public void display(int number, string word)
+ 	{
+ 	}
+ }
+ 
+ http://beginnersbook.com/2013/04/runtime-compile-time-polymorphism/
+ http://stackoverflow.com/questions/20783266/what-is-the-difference-between-dynamic-and-static-polymorphism-in-java

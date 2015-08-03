@@ -7,7 +7,9 @@ public class BaseNo {
 	
 	
 	private int number = 10;
-	List<String> strings = new ArrayList<String>();
+	public List<String> strings = new ArrayList<String>();
+	/* public variable will pass on properties the child class will be able to access, but private variables will 
+	   not pass on as inheritance to the next class */
 	
 	public BaseNo()
 	{
@@ -20,6 +22,7 @@ public class BaseNo {
 		/* This action of executing the doingSomething can looked as dynamic/runtime polymorphism, because java compiler
 		   will no execute the one in it class, but the latest definition of that method */ 
 		System.out.println("nothing left");
+		strings.add("First");
 	}
 	
 	public BaseNo(int number) 

@@ -4,7 +4,8 @@ public class RecATdemo {
 	
 	public PowerInterface powerInterface = new RecurringAT();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
 		RecurringAT oj = new RecurringAT();
 		//oj.writevertical(1557);
