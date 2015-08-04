@@ -15,6 +15,16 @@ public class SecondBase extends BaseNo{
 		//doingSomething();
 	}
 
+	public SecondBase(int number)
+	{
+		this(0, "word");
+	}
+	
+	public SecondBase(int number, String word)
+	{
+		System.out.println("sebivkfldnvklf");
+	}
+	
 	public String getName()
 	{
 		return name;
@@ -28,6 +38,14 @@ public class SecondBase extends BaseNo{
 	public List<String> getData()
 	{
 		return getDataFromList();
+	}
+	
+	@SuppressWarnings("unused")
+	private void priChange()
+	{
+		System.out.println("second base class, modifier should change");
+		/* essentially this really wont get inherited, so we can make a new method with everything the same, 
+		   and it will be considered a different method */
 	}
 	
 	public void doingSomething()

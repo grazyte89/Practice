@@ -31,4 +31,9 @@ public class ThirdBase extends SecondBase{
 			addToListData("Data value " + i + 5 * 6 + " being executed in third base");
 		}
 	}
+	
+	public void priChange()
+	{
+		System.out.println("third");
+	}
 }

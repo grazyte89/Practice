@@ -1,1 +1,136 @@
-Inheritance
+ Inheritance
+
+ /* ----------------------------------------- | What is Inheritance? | ---------------------------------------------- */
+ 
+ Inheritance is object oriented feature that allows a normal class to inherit properties from another class, by making
+ it an extension of the other class.
+ 
+ Inheritance allows the derived class to inherit the properties from the base class by using the keyword 'extends'.
+ example below shows how inheritance happens 
+ 
+ e.g.
+ 
+ public class Car extends Machine {
+ } 
+ 
+ /* ---------------------------------- | What are inherited from the base class? | -------------------------------- */
+ 
+ public methods in the child (derived) class are inheritance from the parent (base) class
+ 
+ e.g.
+ 
+ public void go() // inherited from the base class
+ {
+ 	speed = 50; // speed can only be changed like this, if the variable is public
+ 	
+ 	/* In the derived class we can change the behaviour of the method. this know as overriding */
+ 	
+ 	/* Overriding the methods mean changing the method to something different to it purpose */
+ }
+ 
+ 
+ /* ----------------------------------------- | What is the super keyword? | -------------------------------------- */
+ 
+ The 'super'keyword means that we are invoking the the constructor of the base class within the constructor of the
+ derived class.
+ 
+ e.g.
+ 
+ public class Car extends Machine {
+ 	
+ 	public Car()
+ 	{
+ 		super(); // here we are invoking the constructor of machine class. 
+ 	}
+ } 
+ 
+ ::Note:: important tip
+ 
+ Invoking the super keyword within the constructor of the derived class, it has to follows one important rule, which is
+ 'super' has to be the first statement within the derived classes constructor.
+ 
+ e.g.
+ 
+ public class Car extends Machine {
+ 	
+ 	public Car()
+ 	{
+ 		super(); 
+ 		int i = 0; // correct 
+ 	}
+ } 
+ 
+ public class Car extends Machine {
+ 	
+ 	public Car()
+ 	{
+ 		int i = 0; 
+ 		super(); // incorrect
+ 	}
+ } 
+ 
+ /* ------------------------------------------- | What is 'this' keyword | ---------------------------------------- */
+ 
+ The 'this' keyword is similar to the 'super' keyword, but with a big difference; the 'this' keyword the constructor
+ of the same class. 
+ 
+ public class Car extends Machine {
+ 	
+ 	public Car(int i)
+ 	{
+ 		//
+ 	}
+ 	
+ 	public Car(int i, string j)
+ 	{
+ 		this(0); // invokes the constructor above
+ 	}
+ } 
+ 
+ 
+ /* ------------------------- | Changing access permission of an overridden method | ---------------------------- */
+ 
+ ::Note:: Tip
+ 
+ A private modifier from a base class can be changed to a public modifier in the derived class. But the process 
+ cannot be done in reverse. So you cannot change the public modifier from base class to private modifier in 
+ the derived class.
+ 
+ private void priChange() // base class
+ {
+	System.out.println("second base class, modifier should change");
+	/* essentially this really wont get inherited, so we can make a new method with everything the same, 
+	   and it will be considered a different method */
+ }
+ 
+ public void priChange()
+ {
+ 	System.out.println("third");
+ }
+ 
+ 
+ /* --------------------------------------------- | Static variable | ------------------------------------------ */
+  
+ static means this variable or method belong to the class, therefore static variables are inherited from the base
+ class
+ 
+ 
+ /* ----------------------------------- | Invoking method of a base class method| ------------------------------ */
+ 
+ public string toString() //base class version
+ {
+ 	return (name + " " + date);
+ }
+ 
+ public string toString() // derived class version 
+ {
+ 	return (super().toString() + " " + school);
+ 	// we are invoking the method of the base class
+ }
+ 
+ public string toString() // another way of doing the above
+ {
+ 	return (getName() + " " + getDate());
+ }
+ 
+ 

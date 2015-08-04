@@ -6,6 +6,10 @@
  containing the same functionality. In polymorphism there are two concepts: static (compiler) polymorphism 
  and dynamic (dynamic) polymorphism; these explained at the bottom.
  
+ /* ---------------------------------------- | What is late binding | ---------------------------------------- */
+ 
+ when a method invocation is activated during runtime. Most othods use late binding
+ 
  /* ----------------------------------- | Polymorphism in a nutshell | --------------------------------------- */
  
  Polymorphism allows us to reuse code and redefine code from the base class.
@@ -25,7 +29,7 @@
  /* -------------------------------- | What is dynamic/runtime polymorphism | ------------------------------- */
  
  Dynamic/runtime polymorphism is when the compiler doesn't know which method to use, so it just ignores it,
- to be used when the program is being executed.
+ to be used when the program is being executed. aka late binding
  
  e.g.
  
@@ -67,7 +71,7 @@
  
  static/compiler polymorphism is when there is class with multiple methods with the same name, each with a different
  parameters, as well as different number of parameters in the same class. The compiler will able run these because it
- will able differentiate them by their parameters.
+ will able differentiate them by their parameters. aka early binding
  
  public class BaseClass {
  	public void display(int number)
