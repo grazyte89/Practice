@@ -76,24 +76,65 @@ public class CntBreakRtn {
 			{
 				if(b == a)
 				{
-					System.out.println("inner loop inner section, continue activate" + b);
+					System.out.println("inner loop if section, continue activate " + b + " a: " + a);
 					continue;
+					/* using the continue statement meaning, if the continue statement is executed, then any other 
+					   statements after that will not be executed, and will force the loop to iterate */
+					
+					/* when a continue statement is placed in a nested statement, and the continue statement is 
+					   executed, it will NOT execute the statements after the continue statement within the 
+					   same loop. But this action will not affect the statements in the outer loops, which are after 
+					   the continue statement is executed.*/
 				}
-				System.out.println("inner loop outer section" + b);
+				System.out.println("inner loop outside if section" + b);
+				System.out.println("i cc c"
+						+ "\n dcdfv"
+						+ "\ndc';d"
+						+ "\ndpcdcl;d");
 			}
-			System.out.println(a);
+			System.out.println("this place will still be executed even if continue id executed, because out continues"
+					+ "reach");
 		}
+		System.out.println("");
+	}
+	
+	public void multiArrayBreaking()
+	{
+		for(int a = 0; a < 10; a++)
+		{
+			for(int b = a - a; b < 10; b++)
+			{
+				if(b == a)
+				{
+					System.out.println("inner loop if section , break activate b " + b + "a: " + a);
+					break;
+					/* break, breaks out of the loop it is placed in. But if the break statement is place in a nested
+					   inner loop, then it will break out of the inner loop and not the outer, you'll need another 
+					   break statement in the outer loop come out of the loop */
+					
+					/* breaks out of the loop closest the break statement*/
+				}
+				System.out.println("inner loop outside if section" + b);
+			}
+			System.out.println("breaeking should be ar ths level " + a);
+			/* break statement will not effect this loop(the outer loop), it only affects the first loop it comes 
+			   into contact with */
+		}
+		System.out.println("outside the loops ");
 	}
 	
 	public static void main(String[] args) {
-		CntBreakRtn cnt = new CntBreakRtn();
+		/*CntBreakRtn cnt = new CntBreakRtn();
 		cnt.wayToContinue();
 		System.out.println("-------------------");
 		
 		CntBreakRtn brk = new CntBreakRtn();
-		brk.wayToBreak();
+		brk.wayToBreak();*/
 		
 		CntBreakRtn rtn = new CntBreakRtn();
-		rtn.wayToReturn(true);
+		//rtn.wayToReturn(true);
+		
+		rtn.multiArrayContinue();
+		//rtn.multiArrayBreaking();
 	}
 }
