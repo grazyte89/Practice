@@ -48,10 +48,9 @@ public class SecondBase extends BaseNo{
 		   and it will be considered a different method */
 	}
 	
-	@SuppressWarnings("unused")
-	private void priCheckingSomething()
+	public void priCheckingSomething()
 	{
-		System.out.println("private seconf class checking " + 1);
+		System.out.println("private seconf class checking " + 2);
 	}
 	
 	public void pubCheckingSomething()
