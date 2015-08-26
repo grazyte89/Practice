@@ -6,6 +6,7 @@ public class DemoInh {
 		ThirdBase thirdBase = new ThirdBase();
 		thirdBase.addData("ncdll");
 		thirdBase.everyData();
+		thirdBase.testSomething();
 		
 		SecondBase secondBase = new SecondBase();
 		secondBase.addToListData("lalalalala");

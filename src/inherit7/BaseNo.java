@@ -50,6 +50,22 @@ public class BaseNo {
 		return strings;
 	}
 	
+	private void priCheckingSomething()
+	{
+		System.out.println("private base class checking " + 1);
+	}
+	
+	public void pubCheckingSomething()
+	{
+		System.out.println("public base class checking ");
+	}
+	
+	public void testSomething()
+	{
+		priCheckingSomething();
+		pubCheckingSomething();
+	}
+	
 	public void doingSomething()
 	{
 		// this method is difference in every class, we will see which methods will be used by java.
