@@ -25,6 +25,9 @@ public class Anidemo {
 		// Here the polymorphism is happening
 		oj.movement();
 		/*
+		 * The data type of this parameter of this method is Animal, but it will also except arguments whose type
+		 * is a sub class of the Animal class.
+		 * 
 		 * movement in base class animal and cat class have different definition. 
 		 * so why is the method of the cat version movement used?
 		 * 

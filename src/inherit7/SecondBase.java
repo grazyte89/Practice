@@ -8,7 +8,11 @@ public class SecondBase extends BaseNo{
 	
 	public SecondBase()
 	{
-		super();
+		super(125L);
+		/* if the super(125L) isn't added, then java will automatically behind the scene use the super() with no argument 
+		 *  invoking the constructor at the base class.
+		 * If a there is no parameterless BaseNo() constructor in the base class, then java will display a compiler error
+		 */
 		System.out.println("secondclass");
 		setNumber(50);
 		strings.add("second");

@@ -4,7 +4,7 @@ public class ThirdBase extends SecondBase{
 	
 	public ThirdBase()
 	{
-		super();
+		//super();
 		/* super() constructor will execute the content with this classes bases class */
 		System.out.println("third");
 		System.out.println(getNumber());

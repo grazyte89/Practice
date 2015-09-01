@@ -56,9 +56,11 @@
  	
  	
  	second-clss.outPrint(); 
- 	// this will run during runtime , because SecondClass is a subclass of BaseClass, and so there's two version of 
- 	   the outPrint() method, it wouldn't know which one to use. Why is the SecondClass version used during, because 
- 	   the data type is SecondBase, so thats taken into account. 
+ 	/* this will run during runtime , because SecondClass is a subclass of BaseClass, and so there's two version of 
+ 	 * the outPrint() method, it wouldn't know which one to use. Why is the SecondClass version used during, because 
+ 	 * it see that we are making an object of the derived class, so it think there must be reason for why we are making 
+	 * an object of the derived class; for that reason it thinks that using the version in the deried class is the best option.
+	 */
  	   
     // runtime polymorphism. also check out Anidemo.java and check method display.  
     
