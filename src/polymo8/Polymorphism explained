@@ -59,7 +59,8 @@
  	/* this will run during runtime , because SecondClass is a subclass of BaseClass, and so there's two version of 
  	 * the outPrint() method, it wouldn't know which one to use. Why is the SecondClass version used during, because 
  	 * it see that we are making an object of the derived class, so it think there must be reason for why we are making 
-	 * an object of the derived class; for that reason it thinks that using the version in the deried class is the best option.
+	 * an object of the derived class; for that reason it thinks that using the version in the deried class is the best 
+	 * option.
 	 */
  	   
     // runtime polymorphism. also check out Anidemo.java and check method display.  
@@ -69,7 +70,8 @@
  }
  
  
- /* -------------------------------- | What is static/compiler polymorphism | -------------------------------- */
+ 
+ /* -------------------------------- | What is static/compiler polymorphism | ------------------------------------ */
  
  static/compiler polymorphism is when there is class with multiple methods with the same name, each with a different
  parameters, as well as different number of parameters in the same class. The compiler will able run these because it
@@ -88,6 +90,32 @@
  	{
  	}
  }
+ 
+ /* ---------------------------------------- | final modifier to method | ----------------------------------------- */
+ 
+ Adding a 'final' modifier to a method mean, this method cannot be modified (overridden) in the derievd class.
+ 
+ :note:
+ 
+ adding the 'final' modifier makes the compiler use early binding for the particular method.
+ 
+ 
+ /* --------------------------------------------- | static  method | ---------------------------------------------- */
+ 
+ static method doesn't use late binding.
+ 
+ /* ---------------------------------------- | down casting and up casting | -------------------------------------- */
+ 
+ down casting is not possible when dealing with inheritance. Up casting is possible.
+ 
+ e.g.
+ 
+ Sale saleVal;
+ Discount discount = new Discount(07, 10);
+ 
+ sale = discount;
+ // up casting happening here.
+ 
  
  http://beginnersbook.com/2013/04/runtime-compile-time-polymorphism/
  http://stackoverflow.com/questions/20783266/what-is-the-difference-between-dynamic-and-static-polymorphism-in-java
