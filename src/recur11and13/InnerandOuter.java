@@ -4,7 +4,7 @@ public class InnerandOuter {
 	
 	private int mones = 10; // the private variable of the outer class can be directly accessed by the inner class
 	
-	public class Inclass {
+	private class Inclass {
 		
 		private int test = 45;
 		
