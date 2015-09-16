@@ -14,7 +14,7 @@ public class RecurringAT implements PowerInterface {
 		List<String> list = new ArrayList<String>();
 		addlist(list);
 		System.out.println(list);
-		combinationBreaker("oylel");
+		combinationBreaker("", "oylwel");
 	}
 
 	private void writevertical(int n)
@@ -60,19 +60,23 @@ public class RecurringAT implements PowerInterface {
 		}
 	}
 	
-	public static void combinationBreaker(String string)
+	public static void combinationBreaker(String prefix, String string)
 	{
 		int length = string.length();
 		
-		if(string.equals("yello"))
+		if(length == 0 )
 		{
-			System.out.println("done");
+			if(prefix.equals("yellow"))
+			{
+				System.out.println(prefix);
+			}
 		}
 		else
 		{
 			for(int index = 0; index < string.length(); index++)
 			{
-				combinationBreaker(string.substring(0, index) + string.substring(index + 1, length));
+				combinationBreaker(prefix + string.charAt(index)
+						,string.substring(0, index) + string.substring(index + 1, length));
 			}
 		}
 	}
