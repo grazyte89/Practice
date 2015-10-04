@@ -25,5 +25,16 @@ public class Hello {
 		int number4 = 1;
 		number4 = number4 + 4;
 		System.out.println(number4); // different way of doing number3
+		
+		while(truth)
+		{
+			if(number == 7)
+			{
+				truth = false;
+			}
+			number++;
+		}
+		
+		System.out.println("number " + number);
 	}
 }
