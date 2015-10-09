@@ -26,6 +26,8 @@ public class StatisyDemo {
 				}
 			}
 		}
+		
+		vae2.loling();
 
 	}
 

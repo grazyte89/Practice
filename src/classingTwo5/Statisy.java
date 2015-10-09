@@ -3,6 +3,7 @@ package classingTwo5;
 public class Statisy {
 	
 	public static int count = -1;
+	public static int lol = 1; // you can have static variable in non static methods 
 	
 	private String name;
 	private int value;
@@ -45,5 +46,11 @@ public class Statisy {
 	public boolean morethan(Statisy og)
 	{
 		return (value > og.value);
+	}
+	
+	public void loling()
+	{
+		lol = 50;
+		System.out.println("loling " + lol);
 	}
 }
