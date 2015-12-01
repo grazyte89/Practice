@@ -42,6 +42,11 @@ public class OperatorAdvance {
 
 	public static void main(String[] args)
 	{
+		String hi = "yo";
+		if("hello".equals("hello") && hi.equals("yo"))
+		{
+			System.out.println("yeah");
+		}
 		System.out.println( 11 ^ 12);
 		int[] array = {11, 12, 11, 13, 14, 14, 12};
 		System.out.println(xorOperatorEx(array));

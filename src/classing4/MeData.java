@@ -125,6 +125,16 @@ public class MeData {
 		return salary;
 	}*/
 	
+	public void doingSomthing()
+	{
+		System.out.println(getWord("hello"));
+	}
+	
+	public String getWord(String wod)
+	{
+		return wod;
+	}
+	
 	public String toString()
 	{
 		return (day + " " + month + " " + year);

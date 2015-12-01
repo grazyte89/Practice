@@ -18,5 +18,7 @@ public class MeDataDemo {
 		System.out.println(data1.equals(data2));
 		System.out.println(data1);
 		
+		data2.getWord("by");
+		data2.doingSomthing();
 	}
 }
