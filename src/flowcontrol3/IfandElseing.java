@@ -12,6 +12,8 @@ public class IfandElseing {
 		
 		inputin = new Scanner(System.in);
 		
+		che("hello", "bye", "ri", "ls", "ef");
+		
 		String stingValue = inputin.next();
 		TernaryStuff stuff = new TernaryStuff();
 		stuff.checkTenerary(stingValue);
@@ -77,6 +79,18 @@ public class IfandElseing {
 		else
 		{
 			System.out.println("Your not eligable");
+		}
+	}
+	
+	private static void che(String st1, String st2, String st3, String st4, String st5)
+	{
+		if(st1.equals("hello") && st2.equals("bye") && st3.equals("ri") && st4.equals("as") && st5.equals("ef"))
+		{
+			System.out.println("worked");
+		}
+		else
+		{
+			System.out.println("didnt work");
 		}
 	}
 }

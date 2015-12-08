@@ -42,6 +42,7 @@ public class OperatorAdvance {
 
 	public static void main(String[] args)
 	{
+		System.out.println(1012 % 1);
 		String hi = "yo";
 		if("hello".equals("hello") && hi.equals("yo"))
 		{
