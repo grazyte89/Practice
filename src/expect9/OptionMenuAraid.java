@@ -90,4 +90,14 @@ public class OptionMenuAraid {
 		 * this how you define a throw method
 		 */
 	}
+	
+	public int getdisplay() throws Exception
+	{
+		/* when declaring a method with a throws, we are telling java that this method may encounter a problem.
+		 * so when ever you use it, you will have to enclose it with a try-block
+		 * 
+		 */
+		System.out.println("fkfk");
+		return 1;
+	}
 }
