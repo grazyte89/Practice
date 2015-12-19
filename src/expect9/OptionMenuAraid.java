@@ -32,6 +32,7 @@ public class OptionMenuAraid {
 				{
 					opmenu(tnumber);
 					optionstate = true;
+					multiSenf("hello");
 				}
 				else
 				{
@@ -86,9 +87,25 @@ public class OptionMenuAraid {
 	private void mSend(String str) throws OptionException1
 	{
 		throw new OptionException1(str);
-		/*
-		 * this how you define a throw method
+		/* this how you define a throw method
+		 * So, when you add a throw new, you will be give with two options:
+		 * 1) add both a throws and optionexction1 declaration in the method head 
+		 * or
+		 * 2) surround it with try and catch.
+		 * i chose the first option
 		 */
+	}
+	
+	private void multiSenf(String str) throws OptionException1, Exception
+	{
+		if(str.equals("hello"))
+		{
+			throw new OptionException1(str);
+		}
+		else if(str.equals("bye"))
+		{
+			throw new Exception(str);
+		}
 	}
 	
 	public int getdisplay() throws Exception
