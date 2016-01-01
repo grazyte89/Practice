@@ -20,5 +20,17 @@ public class MeDataDemo {
 		
 		data2.getWord("by");
 		data2.doingSomthing();
+		
+		System.out.println("data2 before: " + data2);
+		
+		MeData data3 = data2;
+		data3.setmonth("February");
+		
+		System.out.println("data2 after: " + data2);
+		
+		/* You can see above that data3s' value is the object data2, and you can see that we change the month in 
+		 * data3 to February. 
+		 * To our suprise, we see that the month for data2 has changed as well. why is that?
+		 */
 	}
 }

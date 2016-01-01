@@ -1,0 +1,104 @@
+ Pass-by-value explained 
+ 
+ Before we start, we have to acknowledge that java is always uses pass-by-value when you pass an argument, whether 
+ the parameter is a primitive or class data-type.
+ 
+ /* ----------------------------------------- | what is pass-by-value? | ---------------------------------------- */ 
+ 
+ When we pass an argument in an method, what we are doing is, passing a copy of the value of the argument and not 
+ the argument itself.
+ 
+ So pass-by-value means that java create a copy of the data, and works with the copy of the value representing
+ the data and not the data itself. 
+ 
+ e.g 
+ 
+ // So when we do something like this...
+ 
+ public static void main(String[] args)
+ {
+ 	int x = 10;
+ 	foo(x);
+ 	System.out.println(x);
+ }
+ 
+ public static void foo(int x) // x will only hold a copy
+ {
+ 	x = x + 2;
+ 	/* any changes here will not effect the original, because x is just holding the value.
+ 	 */
+ }
+ 
+ output of x: 10;
+ 
+ /* ----- | Why did nothing happen? | ------- */
+ 
+ As mentioned before, java is a pass-by-value, and pass-by-value just the copy of the original data, thus when any 
+ alterations are happening in the method, it happens to the copy and not the original. 
+ 
+ /* ------------------------------------ | How does pass-by-value work? | ------------------------------------------ */
+ 
+ When passing an argument by invoking the method, java creates a temporary temporary variable inside the method
+ that is assigned the copy of the argument. So when we are making changes, the changes are happening to the 
+ temporary variable. 
+ 
+ The temporary variable in question is the parameter; so one way to look at parameters are to look at them as temporary
+ variables within the brackets.
+ 
+ e.g
+ 
+ object.foo(5)
+ 
+ ----> foo(5)
+ {
+ 	creates a temporary variable int x = 5
+ 	changes the value of x = 100;
+ 	method finished and temporary variable get deleted by garbage collector
+ } 
+  
+ /* --------------------------- | pass-by-value is tricky with class type (and objects) | -------------------------- */
+ 
+ Pass-by-value with objects or reference type data-types are a bit more complex, in the sense that with arguments
+ with a primitive data-type, the will no change, because you are making changes to the copy and not the value. 
+ but with an argument of a reference data-type, you are tricked in into thinking that the data has been passed and
+ not the copy.
+ 
+ e.g
+ 
+ public static void main(String[] args)
+ {
+ 	int x = 10;
+ 	foo(x);
+ 	System.out.println(x);
+ 	
+ 	Something obj = new Something();
+ 	obj.setName("Frog");
+ 	obj.setSize(1);
+ 	System.out.println(obj);
+ }
+ 
+ public static void foo(int x) // x will only hold a copy
+ {
+ 	x = x + 2;
+ 	/* any changes here will not effect the original, because x is just holding the value.
+ 	 */
+ }
+ 
+ public static void fooRef(Something item)
+ {
+ 	item.setName("Apple");
+ 	item.setSize(5);
+ }
+ 
+ output of x: 10
+ output of obj: Apple 5
+ 
+ Results say that object changed, and the primitive type didn't.
+ 
+ /* -------------------------------------------- | How is this possible | --------------------------------------------------- */
+ 
+ First of all, let's try getting an understanding on how reference data-type work. A variable of reference and primitive 
+ data-type both behave differently, when holding data in the memory. A variable of primitive data-type works stores its
+ data to the memory directly, meaning a variable x will have a spot in the memory with name x.   
+ 
+ 
