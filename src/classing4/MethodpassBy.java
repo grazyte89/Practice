@@ -2,21 +2,21 @@ package classing4;
 
 public class MethodpassBy {
 
-	public int x;
+	public String  x;
 	private int y;
 	
-	public MethodpassBy(int x, int y)
+	public MethodpassBy(String x, int y)
 	{
 		this.x = x;
 		this.y = y;
 	}
 
-	public int getX()
+	public String getX()
 	{
 		return x;
 	}
 
-	public void setX(int x)
+	public void setX(String x)
 	{
 		this.x = x;
 	}

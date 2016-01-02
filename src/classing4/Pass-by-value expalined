@@ -11,25 +11,27 @@
  So pass-by-value means that java create a copy of the data, and works with the copy of the value representing
  the data and not the data itself. 
  
- e.g 
+ <e.g> 
  
- // So when we do something like this...
+	 // So when we do something like this...
+	 
+	 public static void main(String[] args)
+	 {
+	 	int x = 10;
+	 	foo(x);
+	 	System.out.println(x);
+	 }
+	 
+	 public static void foo(int x) // x will only hold a copy
+	 {
+	 	x = x + 2;
+	 	/* any changes here will not effect the original, because x is just holding the value.
+	 	 */
+	 }
+	 
+	 output of x: 10;
  
- public static void main(String[] args)
- {
- 	int x = 10;
- 	foo(x);
- 	System.out.println(x);
- }
- 
- public static void foo(int x) // x will only hold a copy
- {
- 	x = x + 2;
- 	/* any changes here will not effect the original, because x is just holding the value.
- 	 */
- }
- 
- output of x: 10;
+ </e.g>
  
  /* ----- | Why did nothing happen? | ------- */
  
@@ -45,16 +47,18 @@
  The temporary variable in question is the parameter; so one way to look at parameters are to look at them as temporary
  variables within the brackets.
  
- e.g
+ <e.g>
  
- object.foo(5)
+	 object.foo(5)
+	 
+	 ----> foo(5)
+	 {
+	 	creates a temporary variable int x = 5
+	 	changes the value of x = 100;
+	 	method finished and temporary variable get deleted by garbage collector
+	 } 
  
- ----> foo(5)
- {
- 	creates a temporary variable int x = 5
- 	changes the value of x = 100;
- 	method finished and temporary variable get deleted by garbage collector
- } 
+ </e.g>
   
  /* --------------------------- | pass-by-value is tricky with class type (and objects) | -------------------------- */
  
@@ -63,42 +67,153 @@
  but with an argument of a reference data-type, you are tricked in into thinking that the data has been passed and
  not the copy.
  
- e.g
+ <e.g>
  
- public static void main(String[] args)
- {
- 	int x = 10;
- 	foo(x);
- 	System.out.println(x);
- 	
- 	Something obj = new Something();
- 	obj.setName("Frog");
- 	obj.setSize(1);
- 	System.out.println(obj);
- }
+	 public static void main(String[] args)
+	 {
+	 	int x = 10;
+	 	foo(x);
+	 	System.out.println(x);
+	 	
+	 	Something obj = new Something();
+	 	obj.setName("Frog");
+	 	obj.setSize(1);
+	 	System.out.println(obj);
+	 }
+	 
+	 public static void foo(int x) // x will only hold a copy
+	 {
+	 	x = x + 2;
+	 	/* any changes here will not effect the original, because x is just holding the value.
+	 	 */
+	 }
+	 
+	 public static void fooRef(Something item)
+	 {
+	 	item.setName("Apple");
+	 	item.setSize(5);
+	 }
+	 
+	 output of x: 10
+	 output of obj: Apple 5
  
- public static void foo(int x) // x will only hold a copy
- {
- 	x = x + 2;
- 	/* any changes here will not effect the original, because x is just holding the value.
- 	 */
- }
- 
- public static void fooRef(Something item)
- {
- 	item.setName("Apple");
- 	item.setSize(5);
- }
- 
- output of x: 10
- output of obj: Apple 5
+ </e.g>
  
  Results say that object changed, and the primitive type didn't.
  
  /* -------------------------------------------- | How is this possible | --------------------------------------------------- */
  
  First of all, let's try getting an understanding on how reference data-type work. A variable of reference and primitive 
- data-type both behave differently, when holding data in the memory. A variable of primitive data-type works stores its
- data to the memory directly, meaning a variable x will have a spot in the memory with name x.   
+ data-type both behave differently, when holding data in the memory. 
+ A variable of primitive data-type works stores its data to the memory directly, meaning a variable x will have a spot 
+ in the memory with the value 10. 
+ In-contrast to reference data-type, which stores data indirectly, meaning the spot in the memory assigned 'obj' does not 
+ hold the value, but rather the location to where the value is really held. obj in the meory is a pointer to the real
+ location.
  
+ <e.g>
+ 
+	 int x = 10;
+	 
+	 memory address x : holds value 10;
+	 
+	 obj = new Something("Mary, 25");
+	 
+	 memory address obj : holds value 10001
+	 memory address 10001 : holds value mary 25
+ 
+ </e.g>
+ 
+ Back to the main point, how is it possible.
+ 
+ Well when we pass in an argument with a the value of the reference data-type, what java does is, it creates a copy of the
+ pointer (reference) to the actually location. please look the comment section for better understanding
+  
+  <e.g>
+ 
+	 public static void main(String[] args)
+	 {
+	 	Something obj = new Something();
+	 	obj.setName("Frog");
+	 	obj.setSize(1);
+	 	System.out.println(obj);
+	 }
+	 
+	 public static void fooRef(Something item)
+	 {
+	 	item.setName("Apple");
+	 	item.setSize(5);
+	 	
+	 	/* So when we make changes to the object inside the method, what happens is a temporary reference variable is created,
+	 	 * and the value assigned is the copy of reference from the argument.
+	 	 * Now this temporary variable has access to the object at a real location, so any changes made here will affect the
+	 	 * object, and the changes will permanent; this is possible, because does not create copy the object, instead it 
+	 	 * creates a copy of the pointer.
+	 	 * 
+	 	 */
+	 	 
+	 	/* An analogy of pass-by-value reference data-type()
+	 	 * Imagine you have a vault (true location of object) with £500,000 in switzerland, and you are in the UK with
+	 	 * a key (reference/pointer).
+	 	 * And lets say you wanted to share the money with your friend who lives in Japan, so made a copy of the key 
+	 	 * to your vault.
+	 	 * So any changes to the balance, will affect you as well; so lets say your friend took out £100,000, and
+	 	 * you look at your balance, you'll see that you balance is £400,000. 
+	 	 * The vault is 400,000 because both of you have access to vault, you with your original key, and your friend
+	 	 * with his copy.
+	 	 */
+	 	 
+	 	// look at analogy of primitive data-type
+	 }
+	 
+	 public static void foo(int x) // x will only hold a copy
+	 {
+	 	x = x + 2;
+	 	
+	 	/* Creates a temporary variable which is x, and the pass-by-value makes the value of x, a copy of the
+	 	 * argument.
+	 	 * So any changes will only affect the the temporary variable.
+	 	 */
+	 	
+	 	/* analogy of pass-by-value primitive data-type
+	 	 * Imagine you have £5000 in cash in your wallet, and using a duplication machine you created a copy of your 
+	 	 * wallet with £5000 in it, and gave it to your friend.
+	 	 * Your friend goes to the shop and spends £4000, leaving him with £1000;
+	 	 * Now the balance is £5000 to you, and £1000 to your friend.
+	 	 * You are not affected by your friends spending because his wallet became independent after being copied, 
+	 	 * thus any changes he makes will not affect you.
+	 	 */
+	 }
+	 
+	 output of x: 10
+	 output of obj: Apple 5
+ 
+ </e.g>
+ 
+ 
+ /* --------------------------------------------- | One more thing | -------------------------------------------------- */
+ 
+ <e.g>
+ 	
+ 	main
+ 	{
+	 	Personclass person1 = new Personclass("Mary", 32);
+	 	
+	 	Personclass person2 = person1;
+	 	
+	 	person2.setName("Brannigan");
+	 	
+	 	System.out.println(person1);
+ 	}
+ 	
+ 	output : Brannigan 32
+ 	
+ </e.g>
+ 
+ You are wondering how the name of person1 object became Brannigan when we just changes the value of person2 object.
+ Well this is because both person1 and person2 are reference pointing to the same location where the object for
+ person1 is being stored. 
+ So when we make changes to either person1 or person2 it will affect the object they are pointing to. 
+ 
+  
  
