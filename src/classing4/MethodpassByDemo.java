@@ -10,12 +10,21 @@ public class MethodpassByDemo {
 		System.out.println("m1: " + m1 + "\n" + "m2: " + m2);
 		
 		passByValue(m1.getX(), m2.getY());
-		
 		System.out.println("\n" + "after passByvalue method\n" + "m1: " + m1 + "\n" + "m2: " + m2);
 		
 		passByValueObject(m1, m2);
-		
 		System.out.println("\n" + "after passByValueObject\n" + "m1: " + m1 + "\n" + "m2: " + m2);
+		
+		MethodpassBy m3 = new MethodpassBy("Stacy", 25);
+		MethodpassBy m4 = m3;
+		System.out.println("\n" + "original value of object of m3\n" + m3);
+		m4.setX("Linda");
+		System.out.println("\n" + "value of m3 after changing the value of m4\n" + "m3: " +m3); // m3 and m4 point to the same location, so any changes to m4 will affect m3, and vice versa.
+		
+		MethodpassBy m5 = new MethodpassBy("Staple", 75);
+		m3 = m5;
+		System.out.println("\n"+ "the value of m3 after assigning the value of of object m5\n" + "m3: " + m3); 
+		// m3 is pointing to a different object, which is the location to m5 object
 	}
 
 	public static void passByValue(String x, int y)
