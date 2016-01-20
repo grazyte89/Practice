@@ -114,8 +114,27 @@
  static means this variable or method belong to the class, therefore static variables are inherited from the base
  class
  
+ /* -------------------------------------------- | final class | ------------------------------------------------ */
  
- /* ----------------------------------- | Invoking method of a base class method| ------------------------------ */
+ putting the final keyword before class means that this class can never be a parent (base) class to any
+ sub-class, thus this is how you make a class stand-alone, meaning the class is alone because cannot be 
+ inherited. P.s you could still created an object from a class that is marked final.
+ 
+ e.g
+ 
+ public final class A
+ {
+ }
+ 
+ public class B extends A // illegal, and compiler will output an error
+ {
+ 	public B()
+ 	{
+ 		A obj = new A();
+ 	}
+ }
+ 
+ /* ----------------------------------- | Invoking method of a base class method| ------------------------------- */
  
  public string toString() //base class version
  {
