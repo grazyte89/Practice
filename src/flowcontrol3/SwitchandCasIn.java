@@ -21,7 +21,7 @@ public class SwitchandCasIn {
 		
 		switch(symbols)
 		{
-		case "£":
+		case "ï¿½":
 			money2 = money1 * 1;
 			System.out.println(money2);
 			break;

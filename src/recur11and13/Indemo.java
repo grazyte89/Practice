@@ -13,7 +13,10 @@ public class Indemo {
 		System.out.println(account.getbalance());
 		
 		// make an object of inner class
+		/* InnerandOuter.Inclass inClass = new InnerandOuter().new Inclass();  */
 		
-		/* InnerandOuter.Inclass inClass = new InnerandOuterclass().new Inclass();  */
+		// InnerInherit.Cat inhir = new InnerInherit().new Cat();
+		InnerInherit in = new InnerInherit();
+		System.out.println("speed " + in.getSpd());
 	}
 }

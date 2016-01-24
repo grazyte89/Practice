@@ -50,30 +50,30 @@ public class IfandElseing {
 		{
 			if(value2 > 50 && value2 < 60)
 			{
-				System.out.println("you can receive £1000 support from government");
+				System.out.println("you can receive ï¿½1000 support from government");
 			}
 			else if(value2 > 50 && value2 < 70)
 			{
-				System.out.println("you can receive £2000 support from gavornmnet");
+				System.out.println("you can receive ï¿½2000 support from gavornmnet");
 			}
 			else if(value2 > 50 && value2 < 80)
 			{
-				System.out.println("You can receive £3000 support from the gavornment");
+				System.out.println("You can receive ï¿½3000 support from the gavornment");
 			}
 		}
 		else if (value > 10000 && value < 20000)
 		{
 			if(value2 > 50 && value2 < 60)
 			{
-				System.out.println("you can receive £500 support from government");
+				System.out.println("you can receive ï¿½500 support from government");
 			}
 			else if(value2 > 50 && value2 < 70)
 			{
-				System.out.println("you can receive £1000 support from gavornmnet");
+				System.out.println("you can receive ï¿½1000 support from gavornmnet");
 			}
 			else if(value2 > 50 && value2 < 80)
 			{
-				System.out.println("You can receive £1500 support from the gavornment");
+				System.out.println("You can receive ï¿½1500 support from the gavornment");
 			}
 		}
 		else
