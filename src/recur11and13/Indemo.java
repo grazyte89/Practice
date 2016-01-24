@@ -18,5 +18,8 @@ public class Indemo {
 		// InnerInherit.Cat inhir = new InnerInherit().new Cat();
 		InnerInherit in = new InnerInherit();
 		System.out.println("speed " + in.getSpd());
+		
+		PowerInterface po = Powerclass.getdata("hello");
+		System.out.println(po);
 	}
 }

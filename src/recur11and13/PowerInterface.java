@@ -1,8 +1,12 @@
 package recur11and13;
 
-public interface PowerInterface {
+public interface PowerInterface { // we must declare this as an interface, so the compiler knows  
 	
-	public int powerf(int q, int m);
+	public int num = 1; // java automatically make this static and constant
+	// is the same as public static final int num = 1; 
+	
+	public int powerf(int q, int m); // no body
+	// compiler knows this is an interface so if wont wont mind that there is no body 
 	
 	/* An interface is a NOT a class, but it can be a data-type */
 	
