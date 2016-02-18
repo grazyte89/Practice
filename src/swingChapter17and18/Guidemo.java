@@ -1,0 +1,10 @@
+package swingChapter17and18;
+
+public class Guidemo {
+
+	public static void main(String[] args) {
+		Guiframe ui = new Guiframe();
+		ui.setVisible(true);
+		 //ui.title("the workingg machine ");
+	}
+}
