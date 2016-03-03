@@ -27,6 +27,7 @@ public class MeDataDemo {
 		data3.setmonth("February");
 		
 		System.out.println("data2 after: " + data2);
+        System.out.println("this" + data3.getData());
 		
 		/* You can see above that data3s' value is the object data2, and you can see that we change the month in 
 		 * data3 to February. 

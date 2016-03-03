@@ -99,13 +99,18 @@ public class MeData {
 				return "Error";
 		}
 	}
-	
+
+	public MeData getData()
+	{
+		return this;
+	}
+
 	public int getyear()
 	{
 		return year;
 	}
 	
-	public int getday()
+	public int getDay()
 	{
 		return day;
 	}
