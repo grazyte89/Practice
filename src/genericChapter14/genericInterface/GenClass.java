@@ -1,9 +1,9 @@
 package genericChapter14.genericInterface;
 
 /**
- * Created by Abu on 20/02/2016.
+ * Created by Abu.
  */
-public class GenClass implements GenInterface<String, Integer>
+public class GenClass implements GenInterface<String, Integer>, GenInterfaceTwo<String, Double>
 {
     @Override
     public String getValue(Integer value)
@@ -15,5 +15,17 @@ public class GenClass implements GenInterface<String, Integer>
     public void valueTo(String value)
     {
         System.out.println(value);
+    }
+
+    @Override
+    public String getTypeForT() // --> the type-parameter changes from T to String
+    {
+        return new String();
+    }
+
+    @Override
+    public Double getTypeForU()
+    {
+        return new Double("5");
     }
 }

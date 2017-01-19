@@ -36,5 +36,9 @@ public class Hello {
 		}
 		
 		System.out.println("number " + number);
+
+		int number5 = 0;
+		number5 = (number5 + 1) + 5;
+		System.out.println(number5);
 	}
 }

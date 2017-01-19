@@ -1,7 +1,7 @@
 package genericChapter14.genericInterface;
 
 /**
- * Created by Abu on 20/02/2016.
+ * Created by Abu.
  */
 public interface GenInterface<T, U>
 {
